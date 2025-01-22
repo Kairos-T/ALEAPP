@@ -98,7 +98,7 @@ def get_smyfiles_trash(files_found, report_folder, seeker, wrap_text, time_offse
                 timestamp = parts[timestamp_position]
                 # catch timestamp error in case index count is wrong
                 try:
-                    converted_timestamp = datetime.datetime.utcfromtimestamp(int(timestamp) / 1000).strftime('%Y-%m-%d %H:%M:%S')
+                    converted_timestamp = datetime.datetime.fromtimestamp(int(timestamp) / 1000).strftime('%Y-%m-%d %H:%M:%S')
                 except ValueError:
                     converted_timestamp = ''
 

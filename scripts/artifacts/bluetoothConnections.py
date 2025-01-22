@@ -45,7 +45,7 @@ def get_bluetoothConnections(files_found, report_folder, seeker, wrap_text, time
             if splits[0] == 'Timestamp':
                 key = 'Timestamp'
                 timestamp_value = splits[1].strip()
-                timestamp_value = datetime.datetime.utcfromtimestamp(int(timestamp_value)).strftime('%Y-%m-%d %H:%M:%S')
+                timestamp_value = datetime.datetime.fromtimestamp(int(timestamp_value)).strftime('%Y-%m-%d %H:%M:%S')
                 
             if splits[0] == 'LinkKey':
                 key = 'LinkKey'

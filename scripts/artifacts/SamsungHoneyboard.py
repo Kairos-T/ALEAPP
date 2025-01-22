@@ -86,7 +86,7 @@ def get_honeyboard_screenshot(files_found, report_folder, seeker, wrap_text, tim
         file_found = str(file_found)
         
         modifiedtime = os.path.getmtime(file_found)
-        modifiedtime = (datetime.utcfromtimestamp(int(modifiedtime)).strftime('%Y-%m-%d %H:%M:%S'))
+        modifiedtime = (datetime.fromtimestamp(int(modifiedtime)).strftime('%Y-%m-%d %H:%M:%S'))
         
         filename = os.path.basename(file_found)
         dirname = os.path.basename(os.path.dirname(file_found))

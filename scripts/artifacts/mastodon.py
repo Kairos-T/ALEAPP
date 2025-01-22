@@ -306,7 +306,7 @@ def get_mastodon(files_found, report_folder, seeker, wrap_text, time_offset):
     
     data_list_instance_json = []
 
-    instance_updated_ts = datetime.datetime.utcfromtimestamp(int(data.get('last_updated',''))/1000).strftime('%Y-%m-%d %H:%M:%S')
+    instance_updated_ts = datetime.datetime.fromtimestamp(int(data.get('last_updated',''))/1000).strftime('%Y-%m-%d %H:%M:%S')
     instance_uri = data['instance'].get('uri','')
     instance_title = data['instance'].get('title','')
     instance_description = data['instance'].get('description','')

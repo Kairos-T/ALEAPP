@@ -39,7 +39,7 @@ def get_galleryTrash(files_found, report_folder, seeker, wrap_text, time_offset)
                     extendeddata = row[6]
                     extendeddata = json.loads(extendeddata)
                     datetaken = (extendeddata['__dateTaken'])
-                    datetaken = (datetime.datetime.utcfromtimestamp(datetaken/1000).strftime('%Y-%m-%d %H:%M:%S'))
+                    datetaken = (datetime.datetime.fromtimestamp(datetaken/1000).strftime('%Y-%m-%d %H:%M:%S'))
                     latitude = (extendeddata.get('latitude', ''))
                     longitude = (extendeddata.get('longitude', ''))
                     

@@ -66,7 +66,7 @@ def get_gps(files_found, report_folder, seeker, wrap_text, time_offset):
                             timestamp = frame.get_value('timestamp')
                             timestamp = timestamp.timestamp()
                             # convert from UNIX timestamp to UTC
-                            timestamp = datetime.utcfromtimestamp(timestamp)
+                            timestamp = datetime.fromtimestamp(timestamp)
                             timestamp = str(timestamp)
                             # convert from semicircles to degrees
                             lat = lat * (180.0 / 2 ** 31)
@@ -89,8 +89,8 @@ def get_gps(files_found, report_folder, seeker, wrap_text, time_offset):
                             # add seconds to the UNIX timestamp
                             end_time = start_time_u + total_elapsed_time
                             # convert from UNIX timestamp to UTC
-                            start_time = datetime.utcfromtimestamp(start_time_u)
-                            end_time = datetime.utcfromtimestamp(end_time)
+                            start_time = datetime.fromtimestamp(start_time_u)
+                            end_time = datetime.fromtimestamp(end_time)
                         if frame.has_field('sport'):
                             sport = frame.get_value('sport')
                         if frame.has_field('total_distance'):

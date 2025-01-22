@@ -24,7 +24,7 @@ def get_shutdown_checkpoints(files_found, report_folder, seeker, wrap_text, time
                     
                     entry_epoch = line.split("epoch=")
                     epoch = int(entry_epoch[1].replace(')',''))
-                    shutdown_timestamp = datetime.datetime.utcfromtimestamp(epoch/1000).strftime('%Y-%m-%d %H:%M:%S')
+                    shutdown_timestamp = datetime.datetime.fromtimestamp(epoch/1000).strftime('%Y-%m-%d %H:%M:%S')
                     
                     data_list.append((shutdown_timestamp, request, line))
                 

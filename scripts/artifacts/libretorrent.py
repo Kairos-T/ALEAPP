@@ -37,7 +37,7 @@ def get_libretorrent(files_found, report_folder, seeker, wrap_text, time_offset)
         data_headers = ('Timestamp','ID','Name','Download Path','Error','Manually Paused','Magnet','Downloading Metadata','Visibility')
         data_list = []
         for row in all_rows:
-            timestamp = datetime.utcfromtimestamp(row[3]/1000)
+            timestamp = datetime.fromtimestamp(row[3]/1000)
             data_list.append((timestamp,row[0],row[1],row[2],row[4],row[5],row[6],row[7],row[8]))
         
         report.write_artifact_data_table(data_headers, data_list, file_found)

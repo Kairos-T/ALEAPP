@@ -92,7 +92,7 @@ def get_wifiConfigstore(files_found, report_folder, seeker, wrap_text, time_offs
                                 ConnectChoiceTimeStampvalue = f'{datafieldvalue}'
                                 ConnectChoiceTimeStampcombined = f'{ConnectChoiceTimeStampvalue}'
                                 if int(ConnectChoiceTimeStampcombined) > 1:
-                                    ConnectChoiceTimeStampcombined = datetime.datetime.utcfromtimestamp(int(ConnectChoiceTimeStampvalue) / 1000)
+                                    ConnectChoiceTimeStampcombined = datetime.datetime.fromtimestamp(int(ConnectChoiceTimeStampvalue) / 1000)
                                     
                             if datafieldname == 'HasEverConnected':
                                 HasEverConnected = f'{datafielddata}'

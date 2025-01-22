@@ -61,7 +61,7 @@ def get_gmailEmails(files_found, report_folder, seeker, wrap_text, time_offset):
                     decompressed_data = zlib.decompress(arreglo)
                     message, typedef = blackboxprotobuf.decode_message(decompressed_data)
                    
-                    timestamp = (datetime.utcfromtimestamp(message['17'] / 1000))              
+                    timestamp = (datetime.fromtimestamp(message['17'] / 1000))              
                 else:
                     continue
 
@@ -76,7 +76,7 @@ def get_gmailEmails(files_found, report_folder, seeker, wrap_text, time_offset):
                 decompressed_data = zlib.decompress(arreglo)
                 message,typedef = blackboxprotobuf.decode_message(decompressed_data)
                 
-                timestamp = (datetime.utcfromtimestamp(message['17']/1000))
+                timestamp = (datetime.fromtimestamp(message['17']/1000))
                 
                 to = (message.get('1', '')).get('2', '') if '1' in message and '2' in message['1'] else '' #receiver
                 if isinstance(to, bytes):

@@ -116,7 +116,7 @@ def get_quicksearch_recent(files_found, report_folder, seeker, wrap_text, time_o
             dir_path, base_name = os.path.split(screenshot_path)
             for item in items:
                 screenshot_id = str(item.get('screenshot-id', ''))  
-                search_timestamp = datetime.datetime.utcfromtimestamp(item.get('timestamp1', '')/1000).strftime('%Y-%m-%d %H:%M:%S')
+                search_timestamp = datetime.datetime.fromtimestamp(item.get('timestamp1', '')/1000).strftime('%Y-%m-%d %H:%M:%S')
                 search_query = str(item.get('search-query',''))
                 screenshot_file_path = os.path.join(dir_path, f'{account_name}-{screenshot_id}.jpg')
                 if os.path.exists(screenshot_file_path):

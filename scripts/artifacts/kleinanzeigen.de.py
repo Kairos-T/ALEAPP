@@ -29,7 +29,7 @@ def get_kleinanzeigenrecentsearchescache(files_found, report_folder, seeker, wra
                 data = []
                 number_search_terms = sum(1 for entry in json_data if 'searchTerm' in entry)
                 for entry in json_data:
-                    updated_at = datetime.datetime.utcfromtimestamp(entry['termSearchTimestamp'] / 1000).strftime('%Y-%m-%d %H:%M:%S')
+                    updated_at = datetime.datetime.fromtimestamp(entry['termSearchTimestamp'] / 1000).strftime('%Y-%m-%d %H:%M:%S')
                     data.append((entry['searchTerm'], entry['category']['localizedName'], updated_at))
 
                 if(len(data)>0):
@@ -58,7 +58,7 @@ def get_kleinanzeigennonresettablerecentsearchescache(files_found, report_folder
                 data = []
                 number_search_terms = sum(1 for entry in json_data if 'searchTerm' in entry)
                 for entry in json_data:
-                    updated_at = datetime.datetime.utcfromtimestamp(entry['termSearchTimestamp'] / 1000).strftime('%Y-%m-%d %H:%M:%S')
+                    updated_at = datetime.datetime.fromtimestamp(entry['termSearchTimestamp'] / 1000).strftime('%Y-%m-%d %H:%M:%S')
                     data.append((entry['searchTerm'], entry['category']['localizedName'], updated_at))
 
                 if(len(data)>0):

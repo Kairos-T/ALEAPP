@@ -20,7 +20,7 @@ def get_browserCachefirefox(files_found, report_folder, seeker, wrap_text, time_
         filename = os.path.basename(file_found)
         
         modified_time = os.path.getmtime(file_found)
-        utc_modified_date = datetime.datetime.utcfromtimestamp(modified_time)
+        utc_modified_date = datetime.datetime.fromtimestamp(modified_time)
         
         with open(file_found, 'rb') as file:
             data = file.read()

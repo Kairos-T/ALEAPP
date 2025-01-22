@@ -24,7 +24,7 @@ def get_googlemapaudioTemp(files_found, report_folder, seeker, wrap_text, time_o
             if has_data :
                 
                 # Timestamp
-                utc_modified_date = datetime.utcfromtimestamp(modified_time)
+                utc_modified_date = datetime.fromtimestamp(modified_time)
                 
                 # Audio
                 audio = media_to_html(file_found, files_found, report_folder)
